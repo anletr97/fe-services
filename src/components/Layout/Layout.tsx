@@ -1,4 +1,4 @@
-import { Navbar, Summary } from 'components';
+import { Navbar, Summary, Outro, Footer } from 'components';
 import React from 'react';
 
 const Layout = () => {
@@ -6,6 +6,8 @@ const Layout = () => {
     <div>
       <Navbar />
       <Summary />
+      <Outro />
+      <Footer />
     </div>
   );
 };
