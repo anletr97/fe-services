@@ -1,11 +1,10 @@
-import { ITransaction } from '../../models';
 import axiosClient from '../axiosClient';
 
 export const URL = '/transactions';
 
 const transactionApi = {
   // Fetch all task
-  fetch(): Promise<ITransaction[]> {
+  fetch(): Promise<[]> {
     return axiosClient.get(URL);
   },
   // Get task by Id
@@ -25,7 +24,7 @@ const transactionApi = {
   //     return axiosClient.put(`${API_TASK_URL}/${id}`, body);
   //   },
   // Add task
-  add(body: ITransaction): Promise<ITransaction> {
+  add(body: any): Promise<any> {
     return axiosClient.post(`${URL}`, body);
   },
 };

@@ -1,38 +1,63 @@
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-
-// Styling
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    logoLg: {
-      display: 'none',
-      [theme.breakpoints.up('sm')]: {
-        display: 'block',
-      },
-    },
-    logoSm: {
-      display: 'block',
-      [theme.breakpoints.up('sm')]: {
-        display: 'none',
-      },
-    },
-  }),
-);
-
+import 'styles/header.css';
 const Navbar = () => {
-  const classes = useStyles();
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" className={classes.logoLg}>
-          Online Planner
-        </Typography>
-        <Typography variant="h6" className={classes.logoSm}>
-          matmoong
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <div>
+      <header className="header">
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <div className="container">
+            <a href="#" className="navbar-brand logo-website">
+              <img src="images/logo.jpg" alt="" className="img-fluid" />
+            </a>
+            <button
+              type="button"
+              className="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse justify-content-between"
+              id="navbarCollapse"
+            >
+              <div className="navbar-nav">
+                <a href="#" className="nav-item nav-link active">
+                  Trang chủ
+                </a>
+                <a href="#" className="nav-item nav-link">
+                  Về chúng tôi
+                </a>
+                <a href="#" className="nav-item nav-link">
+                  Tin tức
+                </a>
+                <a href="#" className="nav-item nav-link">
+                  Liên hệ
+                </a>
+              </div>
+              <div className="navbar-nav">
+                <button
+                  type="button"
+                  className="btn btn-primary btn-pink"
+                  data-bs-toggle="modal"
+                  data-bs-target="#form_login"
+                  data-bs-whatever=""
+                >
+                  Đăng nhập
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section className="container-fluid">
+        <div className="row">
+          <div className="banner-home">
+            <img src="images/banner.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

@@ -1,32 +1,11 @@
-import { Grid } from '@material-ui/core';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import { Main, Navbar, Sidebar } from 'components';
+import { Navbar, Summary } from 'components';
 import React from 'react';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    // display: "flex",
-  },
-  right: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  },
-}));
-
 const Layout = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div>
       <Navbar />
-      <Grid container>
-        <Grid item sm={2} xs={2}>
-          <Sidebar />
-        </Grid>
-        <Grid item sm={10} xs={10}>
-          <Main />
-        </Grid>
-      </Grid>
+      <Summary />
     </div>
   );
 };
