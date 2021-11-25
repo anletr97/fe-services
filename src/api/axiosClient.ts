@@ -7,7 +7,7 @@ const axiosClient = axios.create({
   },
 });
 
-axiosClient.interceptors.request.use(async (conf) => {
+axiosClient.interceptors.request.use(async (conf: any) => {
   //hanlde exception here
   //..
   return conf;
