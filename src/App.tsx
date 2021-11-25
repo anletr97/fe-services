@@ -1,11 +1,13 @@
-import { Layout } from "components";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
+import { Routes } from 'common';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <Layout />
+      {Routes.map((r) => (
+        <Route path={r.path} key={r.path} component={r.page} />
+      ))}
     </Router>
   );
 }

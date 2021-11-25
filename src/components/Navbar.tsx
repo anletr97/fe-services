@@ -1,4 +1,6 @@
+import { NavItems, Path } from 'common';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'styles/header.css';
 const Navbar = () => {
   return (
@@ -6,9 +8,9 @@ const Navbar = () => {
       <header className="header">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
-            <a href="#" className="navbar-brand logo-website">
-              <img src="images/logo.jpg" alt="" className="img-fluid" />
-            </a>
+            <Link to={Path.HOME} className="navbar-brand logo-website">
+              <img src="images/logo.jpg" alt="" className="img-fluid" />{' '}
+            </Link>
             <button
               type="button"
               className="navbar-toggler"
@@ -22,18 +24,11 @@ const Navbar = () => {
               id="navbarCollapse"
             >
               <div className="navbar-nav">
-                <a href="#" className="nav-item nav-link active">
-                  Trang chủ
-                </a>
-                <a href="#" className="nav-item nav-link">
-                  Về chúng tôi
-                </a>
-                <a href="#" className="nav-item nav-link">
-                  Tin tức
-                </a>
-                <a href="#" className="nav-item nav-link">
-                  Liên hệ
-                </a>
+                {NavItems.map((nav) => (
+                  <Link to={nav.path} className="nav-item nav-link active">
+                    {nav.name}
+                  </Link>
+                ))}
               </div>
               <div className="navbar-nav">
                 <button

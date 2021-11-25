@@ -1,5 +1,4 @@
 export { default as Navbar } from './Navbar';
-export { default as Main } from './Main';
 export { default as Layout } from './Layout';
 export { default as Summary } from './Summary';
 export { default as Donate } from './Donate';
